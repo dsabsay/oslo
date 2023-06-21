@@ -286,7 +286,7 @@ func getN9Indicator(sliSpec v1.SLISpec, metadata v1.Metadata, project string) no
 				}
 			}
 			if !reflect.ValueOf(sliSpec.RatioMetric.Total).IsZero() {
-				if n, ok := getN9MetricSourceName(sliSpec.RatioMetric.Total); ok {
+				if n, ok := getN9MetricSourceName(*sliSpec.RatioMetric.Total); ok {
 					name = n
 				}
 			}

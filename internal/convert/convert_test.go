@@ -41,7 +41,7 @@ func Test_getCountMetrics(t *testing.T) {
 			name: "Fail with Bad",
 			ratioMetric: v1.RatioMetric{
 				Bad:   &v1.MetricSourceHolder{},
-				Total: v1.MetricSourceHolder{},
+				Total: &v1.MetricSourceHolder{},
 			},
 			want:    "",
 			wantErr: true,
@@ -57,7 +57,7 @@ func Test_getCountMetrics(t *testing.T) {
 						},
 					},
 				},
-				Total: v1.MetricSourceHolder{
+				Total: &v1.MetricSourceHolder{
 					MetricSource: v1.MetricSource{
 						Type: "Prometheus",
 						MetricSourceSpec: map[string]string{
@@ -1053,7 +1053,7 @@ func Test_getN9Indicator(t *testing.T) {
 								MetricSourceRef: "foo-bar-sli",
 							},
 						},
-						Total: v1.MetricSourceHolder{
+						Total: &v1.MetricSourceHolder{
 							MetricSource: v1.MetricSource{
 								MetricSourceRef: "foo-bar-sli",
 							},
@@ -1080,7 +1080,7 @@ func Test_getN9Indicator(t *testing.T) {
 								MetricSourceRef: "foo-bar-sli",
 							},
 						},
-						Total: v1.MetricSourceHolder{
+						Total: &v1.MetricSourceHolder{
 							MetricSource: v1.MetricSource{
 								MetricSourceRef: "foo-bar-bad-sli",
 							},
@@ -1187,7 +1187,7 @@ func Test_getN9Thresholds(t *testing.T) {
 								},
 							},
 						},
-						Total: v1.MetricSourceHolder{
+						Total: &v1.MetricSourceHolder{
 							MetricSource: v1.MetricSource{
 								Type: "Datadog",
 								MetricSourceSpec: map[string]string{
@@ -1245,7 +1245,7 @@ func Test_getN9Thresholds(t *testing.T) {
 								},
 							},
 						},
-						Total: v1.MetricSourceHolder{
+						Total: &v1.MetricSourceHolder{
 							MetricSource: v1.MetricSource{
 								Type: "Datadog",
 								MetricSourceSpec: map[string]string{
